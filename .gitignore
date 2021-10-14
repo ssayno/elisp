@@ -6,6 +6,6 @@
 
 # Backup files
 *~
-
+# add a newline
 # Undo-tree save-files
 *.~undo-tree
