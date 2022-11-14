@@ -47,5 +47,54 @@
   (setq a (+ 1 a))
   (message "Number is %d" a))
 
+
+;; define a symbol as variable
+(setq string-vr "ok")
+(message "String variable is %s" string-vr)
+(defvar fouth-symbol-vr "no")
+(type-of string-vr)
+(type-of fouth-symbol-vr)
+(symbolp string-vr)
+(symbolp fouth-symbol-vr)
+(defvar te "ok")
+(defun te () (message "ok"))
+te
+(te)
+(symbolp 'string-vr)
+(symbol-name 'string-vr)
+(symbol-value 'string-vr)
+(symbolp 'fouth-symbol-vr)
+(symbol-name 'fouth-symbol-vr)
+(symbol-value 'fouth-symbol-vr)
+;; setq also specify a symbol
+(symbolp (string ?a ?b ?c))
+(symbolp (make-string 8 ?x))
+;; symbol make
+(setq sym (intern "foo"))
+sym
+(eq sym 'foo)
+(symbol-name 'sym)
+(symbol-value 'sym)
+;; setq also set symbol, specity symbol value.
+(setq sbn "Are you ok!")
+(symbol-name 'sbn)
+;; (symbol-name (string ?a ?b))
+;;
+;; symbol function usage
+(setq ve (obarray-make 10))
+(setq ve2 (obarray-make 10))
+(type-of ve)
+(intern "foo-own" ve)
+(intern-soft "foo-own" ve) ; => t
+(intern-soft "foo-own" ve2) ;=> nil
+(intern-soft "foo-own") ;=> nil
+(unintern "foo-own" ve)
+(unintern "foo-own")
+(intern-soft "foo-own" ve) ;=> nil
+(intern-soft "foo-own") ;=> nil
+;; obarray
+;;
+;;
+(type-of obarray)
 (provide 'fouth)
 ;;; fouth.el ends here
